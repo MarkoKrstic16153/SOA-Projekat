@@ -1,0 +1,51 @@
+<h3>63rd Weather Station</h3>
+<h4>Current Weather Data</h4>
+<div>
+  <div>
+    Current Temperature :
+    {{ getFormat(recentData[recentData.length - 1].airTemperature, "T") }}
+  </div>
+  <div>
+    Feels Like Temperature :
+    {{ getFormat(recentData[recentData.length - 1].wetBulbTemperature, "T") }}
+  </div>
+  <div>
+    Humidity : {{ getFormat(recentData[recentData.length - 1].humidity, "H") }}
+  </div>
+  <div>
+    Current Wind Speed :
+    {{ getFormat(recentData[recentData.length - 1].windSpeed, "W") }}
+  </div>
+  <div>
+    Max Wind Speed :
+    {{ getFormat(recentData[recentData.length - 1].maxWindSpeed, "W") }}
+  </div>
+  <div>
+    Rain Intensity :
+    {{ getFormat(recentData[recentData.length - 1].rainIntensity, "I") }}
+  </div>
+  <div>
+    Rain Interval :
+    {{ getFormat(recentData[recentData.length - 1].intervalRain, "R") }}
+  </div>
+  <div>
+    Barometric Pressure :
+    {{ getFormat(recentData[recentData.length - 1].barometricPressure, "P") }}
+  </div>
+  <div>
+    Solar Radiation :
+    {{ getFormat(recentData[recentData.length - 1].solarRadiation, "S") }}
+  </div>
+  <div>
+    <canvas
+      baseChart
+      [chartType]="chartType"
+      [datasets]="chartDatasets"
+      [labels]="chartLabels"
+      [colors]="chartColors"
+      [options]="chartOptions"
+      [legend]="true"
+    >
+    </canvas>
+  </div>
+</div>

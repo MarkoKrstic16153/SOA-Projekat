@@ -15,8 +15,8 @@ export class FosterComponent implements OnInit {
   chartType: string = 'line';
   public chartColors: Array<any> = [
     {
-      backgroundColor: 'rgba(105, 0, 132, .2)',
-      borderColor: 'rgba(200, 99, 132, .7)',
+      backgroundColor: 'rgba(92, 184, 92, .3)',
+      borderColor: 'rgba(92, 184, 92, 1)',
       borderWidth: 2,
     },
   ];

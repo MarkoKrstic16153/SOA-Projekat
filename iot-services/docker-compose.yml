@@ -77,11 +77,11 @@ services:
       context: .
     env_file: docker-compose.env
     environment:
-      NODEID: "node-fostersensor"
+       NODEID: "node-fostersensor"
       SERVICES: fostersensor
     depends_on:
       - nats
-  sixthreesensor:
+   sixthreesensor:
     build:
       context: .
     env_file: docker-compose.env
@@ -90,7 +90,7 @@ services:
       SERVICES: sixthreesensor
     depends_on:
       - nats
-    #
+  #
   command:
     build:
       context: .

@@ -168,7 +168,7 @@ module.exports = {
           data.wetBulbTemperature,
           data.humidity
         );
-        if (tempPoints < 156) {
+        if (tempPoints < 40) {
           //crvevni za hladno
           console.log(
             "******ALERT****** Crveni Meteoalarm na snazi zbog niske temperature : " +
@@ -197,7 +197,7 @@ module.exports = {
               data.airTemperature +
               "C",
           });
-        } else if (tempPoints < 181) {
+        } else if (tempPoints < 67) {
           //narandzasti za hladno
           console.log(
             "******ALERT****** Narandzasti Meteoalarm na snazi zbog niske temperature : " +
@@ -228,7 +228,7 @@ module.exports = {
           });
         }
 
-        if (tempPoints > 370) {
+        if (tempPoints > 115) {
           console.log(
             "******ALERT****** Crveni Meteoalarm na snazi zbog visoke temperature : " +
               data.airTemperature +
@@ -256,7 +256,7 @@ module.exports = {
               data.airTemperature +
               "C  ",
           });
-        } else if (tempPoints > 339) {
+        } else if (tempPoints > 100) {
           console.log(
             "******ALERT****** Narandzasti Meteoalarm na snazi zbog visoke temperature : " +
               data.airTemperature +

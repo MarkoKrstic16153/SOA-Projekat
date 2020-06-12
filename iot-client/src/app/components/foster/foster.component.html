@@ -1,42 +1,85 @@
-<h3>Foster Beach Weather Station</h3>
-<h4>Current Weather Data</h4>
-<div>
-  <div>
-    Current Temperature :
-    {{ getFormat(recentData[recentData.length - 1].airTemperature, "T") }}
+<h3 class="m-3 p-4" style="font-size: 5vw;">Foster Beach Weather Station</h3>
+<div class="rounded p-2 m-2">
+  <div class="border rounded m-2 p-4">
+    <h2 class="m-2">Current Weather Data</h2>
+    <div class="row">
+      <div class="rounded shadow-lg bg-success m-2 p-1">
+        <div class="font-weight-light mt-1">
+          Current Temperature
+        </div>
+        <div class="h1 font-weight-bold m-2">
+          {{ getFormat(recentData[recentData.length - 1].airTemperature, "T") }}
+        </div>
+      </div>
+      <div class="rounded bg-success m-2 p-1">
+        <div class="font-weight-light mt-1">Feels Like Temperature</div>
+        <div class="h1 font-weight-bold m-2">
+          {{
+            getFormat(recentData[recentData.length - 1].wetBulbTemperature, "T")
+          }}
+        </div>
+      </div>
+
+      <div class="rounded bg-success m-2 p-1">
+        <div class="font-weight-light mt-1">
+          Humidity
+        </div>
+        <div class="h1 font-weight-bold m-2">
+          {{ getFormat(recentData[recentData.length - 1].humidity, "H") }}
+        </div>
+      </div>
+
+      <div class="rounded bg-warning m-2 p-1">
+        <div class="font-weight-light mt-1">Current Wind Speed</div>
+        <div class="h1 font-weight-bold m-2">
+          {{ getFormat(recentData[recentData.length - 1].windSpeed, "W") }}
+        </div>
+      </div>
+      <div class="rounded bg-warning m-2 p-1">
+        <div class="font-weight-light mt-1">Max Wind Speed</div>
+        <div class="h1 font-weight-bold m-2">
+          {{ getFormat(recentData[recentData.length - 1].maxWindSpeed, "W") }}
+        </div>
+      </div>
+
+      <div class="rounded bg-primary m-2 p-1">
+        <div class="font-weight-light mt-1">Rain Intensity</div>
+        <div class="h1 font-weight-bold m-2">
+          {{ getFormat(recentData[recentData.length - 1].rainIntensity, "I") }}
+        </div>
+      </div>
+
+      <div class="rounded bg-primary m-2 p-1">
+        <div class="font-weight-light mt-1">
+          Rain Interval
+        </div>
+        <div class="h1 font-weight-bold m-2">
+          {{ getFormat(recentData[recentData.length - 1].intervalRain, "R") }}
+        </div>
+      </div>
+
+      <div class="rounded bg-primary m-2 p-1">
+        <div class="font-weight-light mt-1">
+          Barometric Pressure
+        </div>
+        <div class="h1 font-weight-bold m-2">
+          {{
+            getFormat(recentData[recentData.length - 1].barometricPressure, "P")
+          }}
+        </div>
+      </div>
+
+      <div class="rounded bg-danger m-2 p-1">
+        <div class="font-weight-light mt-1">
+          Solar Radiation :
+        </div>
+        <div class="h1 font-weight-bold m-2">
+          {{ getFormat(recentData[recentData.length - 1].solarRadiation, "S") }}
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    Feels Like Temperature :
-    {{ getFormat(recentData[recentData.length - 1].wetBulbTemperature, "T") }}
-  </div>
-  <div>
-    Humidity : {{ getFormat(recentData[recentData.length - 1].humidity, "H") }}
-  </div>
-  <div>
-    Current Wind Speed :
-    {{ getFormat(recentData[recentData.length - 1].windSpeed, "W") }}
-  </div>
-  <div>
-    Max Wind Speed :
-    {{ getFormat(recentData[recentData.length - 1].maxWindSpeed, "W") }}
-  </div>
-  <div>
-    Rain Intensity :
-    {{ getFormat(recentData[recentData.length - 1].rainIntensity, "I") }}
-  </div>
-  <div>
-    Rain Interval :
-    {{ getFormat(recentData[recentData.length - 1].intervalRain, "R") }}
-  </div>
-  <div>
-    Barometric Pressure :
-    {{ getFormat(recentData[recentData.length - 1].barometricPressure, "P") }}
-  </div>
-  <div>
-    Solar Radiation :
-    {{ getFormat(recentData[recentData.length - 1].solarRadiation, "S") }}
-  </div>
-  <div>
+  <div class="border p-4 m-2">
     <canvas
       baseChart
       [chartType]="chartType"
